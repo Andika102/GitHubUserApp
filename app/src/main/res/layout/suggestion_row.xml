@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="suggestions"
+            type="com.dicoding.githubuser.data.db.entity.SuggestionEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/suggestionName"
+            setSuggestion="@{suggestions.suggestion}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:drawablePadding="16dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:textSize="20sp"
+            app:drawableStartCompat="@drawable/suggestion"
+            app:drawableTint="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/commitIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Suggestion text" />
+
+        <ImageView
+            android:id="@+id/commitIcon"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/app_name"
+            android:paddingEnd="8dp"
+            app:tint="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/abc_ic_commit_search_api_mtrl_alpha"
+            tools:ignore="RtlSymmetry" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

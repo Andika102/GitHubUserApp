@@ -1,0 +1,19 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.GitHubUser" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryLightColorDark</item>
+        <item name="colorPrimaryVariant">@color/secondaryDarkColorDark</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryColorDark</item>
+        <item name="colorSecondaryVariant">@color/secondaryLightColor</item>
+        <item name="colorOnSecondary">@android:color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <!-- Customize -->
+        <item name="customColorValue">@color/whiteSoft</item>
+        <item name="customColorDrawableValue">@color/darkCard</item>
+        <item name="colorAccent">@color/secondaryDarkColor</item>
+    </style>
+</resources>

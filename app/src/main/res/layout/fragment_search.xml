@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/searchRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.fragment.SearchFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorOnSecondary"
+            app:contentInsetStart="0dp"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/placeholder_users_layout" />
+
+                    <include layout="@layout/placeholder_users_layout" />
+
+                    <include layout="@layout/placeholder_users_layout" />
+
+                    <include layout="@layout/placeholder_users_layout" />
+
+                    <include layout="@layout/placeholder_users_layout" />
+
+                    <include layout="@layout/placeholder_users_layout" />
+
+                    <include layout="@layout/placeholder_users_layout" />
+
+                    <include layout="@layout/placeholder_users_layout" />
+
+                    <include layout="@layout/placeholder_users_layout" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/user_row" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/clearSuggestionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="invisible">
+
+                    <TextView
+                        android:id="@+id/recentSearchText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/clearBtn"
+                        android:padding="8dp"
+                        android:text="@string/recent_search"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/clearBtn"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/clear_all"
+                        android:textColor="@android:color/holo_red_light" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/suggestionsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    tools:listitem="@layout/suggestion_row" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/noUsersLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="50dp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/no_users" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/no_users_found"
+                    android:textSize="50sp"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView"
+                    app:layout_constraintStart_toStartOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/searchNav"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.dicoding.githubuser.ui.fragment.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_detailActivity"
+            app:destination="@id/detailActivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/detailActivity2"
+        android:name="com.dicoding.githubuser.ui.DetailActivity"
+        android:label="activity_detail"
+        tools:layout="@layout/activity_detail" >
+        <argument
+            android:name="detail"
+            app:argType="com.dicoding.githubuser.model.SearchResponse"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="favoriteDetail"
+            app:argType="com.dicoding.githubuser.data.db.entity.FavoriteEntity"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </activity>
+</navigation>

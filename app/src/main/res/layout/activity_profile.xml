@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/profileToolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimaryVariant"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <FrameLayout
+                android:id="@+id/imgLayout"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:layout_constraintBottom_toTopOf="@+id/textInputLayoutName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/profile_image"
+                    tools:ignore="ImageContrastCheck"
+                    tools:src="@drawable/github_prototype_icon" />
+
+                <ImageButton
+                    android:id="@+id/imgBtn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="bottom|end"
+                    android:backgroundTint="@android:color/transparent"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/image_btn"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+            </FrameLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:errorIconDrawable="@drawable/error"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgLayout"
+                app:startIconDrawable="@drawable/person">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profileName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/name"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="textPersonName"
+                    android:maxLength="30"
+                    android:textColorHint="#757575"
+                    tools:ignore="TextContrastCheck,TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:errorIconDrawable="@drawable/error"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutName"
+                app:startIconDrawable="@drawable/mail">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profileEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:imeOptions="flagNoExtractUi"
+                    android:maxLength="30"
+                    android:textColorHint="#616161"
+                    tools:ignore="TextContrastCheck,TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/saveBtn"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/primaryColorDark"
+                android:text="@string/save"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

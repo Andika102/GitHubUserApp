@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.DetailFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/detailAppBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:scrimAnimationDuration="0">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/detailCollapseLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimaryVariant"
+            app:contentScrim="?attr/colorPrimaryVariant"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:scrimAnimationDuration="0"
+            app:titleEnabled="false">
+
+            <ImageView
+                android:id="@+id/bannerImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:tintMode="src_atop"
+                app:scrimAnimationDuration="0"
+                app:tint="#80000000"
+                tools:src="@tools:sample/avatars" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/medium_margin"
+                app:layout_constraintBottom_toBottomOf="@+id/detailImg"
+                app:layout_constraintTop_toBottomOf="@+id/detailImg">
+
+                <ImageView
+                    android:id="@+id/detailImg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="56dp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/nameText"
+                    style="@style/HeadText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/detailImg"
+                    app:layout_constraintStart_toStartOf="@+id/detailImg"
+                    app:layout_constraintTop_toBottomOf="@+id/detailImg"
+                    tools:text="Github Name" />
+
+                <TextView
+                    android:id="@+id/companyText"
+                    style="@style/SubText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@+id/repositoryNum"
+                    app:layout_constraintEnd_toEndOf="@+id/detailImg"
+                    app:layout_constraintStart_toStartOf="@+id/detailImg"
+                    app:layout_constraintTop_toBottomOf="@+id/nameText"
+                    tools:text="Company Name" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/SubText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/repository"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView2"
+                    app:layout_constraintTop_toBottomOf="@+id/companyText" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/SubText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/followers"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/SubText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/following"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView3"
+                    app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+                <TextView
+                    android:id="@+id/followingNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/textView4"
+                    app:layout_constraintEnd_toEndOf="@+id/textView4"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    tools:text="100" />
+
+                <TextView
+                    android:id="@+id/repositoryNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/textView3"
+                    app:layout_constraintEnd_toEndOf="@+id/textView3"
+                    app:layout_constraintStart_toStartOf="@+id/textView3"
+                    tools:text="100" />
+
+                <TextView
+                    android:id="@+id/followersNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toTopOf="@+id/textView2"
+                    app:layout_constraintEnd_toEndOf="@+id/textView2"
+                    app:layout_constraintStart_toStartOf="@+id/textView2"
+                    tools:text="100" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detailToolbar"
+                style="@style/ToolbarText"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            style="@style/TabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detailCollapseLayout"
+            android:contentDescription="@string/app_name" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

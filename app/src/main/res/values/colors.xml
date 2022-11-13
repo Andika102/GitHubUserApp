@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Light Theme Colors  -->
+    <color name="primaryColor">#607d8b</color>
+    <color name="primaryLightColor">#58A3C9</color>
+    <color name="primaryDarkColor">#34515e</color>
+    <color name="secondaryColor">#429595</color>
+    <color name="secondaryLightColor">#A4EFFF</color>
+    <color name="secondaryDarkColor">#006565</color>
+    <color name="blackSoft">#424242</color>
+    <!--  Dark Theme Colors  -->
+    <color name="primaryColorDark">#2d3c42</color>
+    <color name="primaryLightColorDark">#57666d</color>
+    <color name="primaryDarkColorDark">#05161b</color>
+    <color name="secondaryColorDark">#143333</color>
+    <color name="secondaryLightColorDark">#3e5d5c</color>
+    <color name="secondaryDarkColorDark">#000d0c</color>
+    <color name="whiteSoft">#DFDFDF</color>
+    <!--  Other Colors  -->
+    <color name="greySoft">#BABABA</color>
+    <color name="darkCard">#FF424242</color>
+</resources>

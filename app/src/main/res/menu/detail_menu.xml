@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="@string/settings"
+        android:icon="@drawable/more_vert"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/detailShareItem"
+                android:title="@string/share"
+                android:icon="@drawable/share"
+                app:iconTint="?attr/colorOnPrimary"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/favoriteFragment"
+                android:icon="@drawable/love"
+                app:iconTint="?attr/colorOnPrimary"
+                android:title="@string/favorite"
+                app:showAsAction="ifRoom" />
+        </menu>
+    </item>
+</menu>
